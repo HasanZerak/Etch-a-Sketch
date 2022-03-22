@@ -11,9 +11,6 @@ body{
     height: 650px;
     display: grid;
     box-sizing: border-box;
-    grid-template-rows: repeat(16, 1fr);            /*NEW, repeats '1fr' 16 times. 'fr' = unit*/
-    grid-template-columns: repeat(16, 1fr);
-
 }
 .containerChild{           /* each individual grid cell */
     box-sizing: border-box;
