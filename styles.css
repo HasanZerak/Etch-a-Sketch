@@ -1,0 +1,21 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    border: 1px solid black;
+    width: 650px;
+    height: 650px;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+
+}
+.containerChild{
+    box-sizing: border-box;
+    border: 1px solid black;
+}
