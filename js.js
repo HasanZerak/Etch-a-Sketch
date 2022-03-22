@@ -4,6 +4,8 @@ function makeGrid() {
     }
 }
 
+
+
 let container = document.querySelector('#container');
 let containerChild = document.createElement('div');
 containerChild.classList.add("containerChild");
@@ -17,3 +19,9 @@ colorChangeCells.forEach(colorChangeCell => {           //looping through each v
         this.style.backgroundColor = 'red';         //changes colour everytime mouse hovers over it.
     });
 });
+
+function btnReset() {           //function for Reset button.
+    colorChangeCells.forEach(child => {         //looping through each element.
+        child.style.backgroundColor = '';           //removing color from each element.
+    });
+}
