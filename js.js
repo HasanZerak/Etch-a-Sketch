@@ -1,5 +1,6 @@
 let container = document.querySelector('#container');
 
+
 function makeGrid(newGridSize) {            //function to create new grid.
     container.style.gridTemplateRows = `repeat(${newGridSize}, 1fr)`;           //rows of grid.
     container.style.gridTemplateColumns = `repeat(${newGridSize}, 1fr)`;            //columns of grid.
@@ -10,11 +11,16 @@ function makeGrid(newGridSize) {            //function to create new grid.
         //adding an event listener to each div.
         containerChild.addEventListener('mouseover', changeColor);           //for some reason, figuring this out took an hour.
         container.appendChild(containerChild)          //appending new div after each iteration by cloning the div each time.
+        // containerChild.addEventListener('mouseover', playSound2);
     }
 }
 
 function changeColor(e) {
-    e.target.style.backgroundColor = 'red';         //changes colour everytime mouse hovers over it.
+    if (e.target.style.backgroundColor !== 'red'){          //only running the function if color of cell has not been changed.
+        e.target.style.backgroundColor = 'red';         //changes colour everytime mouse hovers over it.
+        let audio = new Audio('/home/hasan/repos/Etch-a-Sketch/sound/QKTA234-pop.mp3');         //variable to hold the audio.
+        audio.play();           //playing the audio.
+    }
 }
 
 function btnReset() {           //function for Reset button.
