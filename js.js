@@ -3,6 +3,7 @@ let defaultColor = 'red';
 let eraser = document.querySelector('.eraser');             //storing the three buttons in variables.
 let color = document.querySelector('.color')
 let randColor = document.querySelector('.randColor');
+let currentSize = 16;
 
 function makeGrid(newGridSize) {            //function to create new grid.
     container.style.gridTemplateRows = `repeat(${newGridSize}, 1fr)`;           //rows of grid.
@@ -43,9 +44,15 @@ eraser.addEventListener("click", () => {            //button to change color to 
     defaultColor = '';
 });
 
-function btnReset() {           //function for Reset button.
-    newGridSize = prompt("Enter the new size of the grid : ");
+function create(){          //button to crete new grid with custom grid size.
+    let newGridSize = document.querySelector('#gridSize');          //storing the value from slider.
     container.innerHTML = '';         //removing everything from container and crearting an entirely new grid.
-    makeGrid(newGridSize);
+    makeGrid(newGridSize.value);
+    currentSize = newGridSize.value;            //assigning value to a varibale for btnReset().
 }
-makeGrid(20);         //Calling the function to create a grid. 
+
+function btnReset() {           //function for Reset button.
+    container.innerHTML = '';         //removing everything from container and crearting an entirely new grid.
+    makeGrid(currentSize);
+}
+makeGrid(16);         //Calling the function to create a grid. 
