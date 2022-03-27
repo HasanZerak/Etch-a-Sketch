@@ -1,8 +1,9 @@
 let container = document.querySelector('#container');
-let defaultColor = 'red';
+let defaultColor = '#000000';
 let eraser = document.querySelector('.eraser');             //storing the three buttons in variables.
 let color = document.querySelector('.color')
 let randColor = document.querySelector('.randColor');
+let customColor = document.querySelector('#customColor');
 let currentSize = 16;
 
 function makeGrid(newGridSize) {            //function to create new grid.
@@ -27,8 +28,12 @@ function changeColor() {
 }
 }
 
+customColor.addEventListener('input', function(event){
+    defaultColor = customColor.value;
+});
+
 color.addEventListener("click", function () {           //button to change color to the default color, by changing 'defaultColor'  
-    defaultColor = 'red';                               //to the color "red".
+    defaultColor = '#000000';                               //to the color "red".
 });
 
 randColor.addEventListener("click", function () {           //button to change color to any random color, by changing 'defaultColor'

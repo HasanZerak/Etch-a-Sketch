@@ -15,4 +15,5 @@ body{
 .containerChild{           /* each individual grid cell */
     box-sizing: border-box;
     border: 1px solid black;
+    background-color: white;
 }
