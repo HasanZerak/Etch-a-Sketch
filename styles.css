@@ -1,19 +1,40 @@
-body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;            /*centering the elements*/
-    align-items: center;
-}
-
 #container{         /*container that stores all grid cells*/
     border: 1px solid black;
-    width: 650px;
-    height: 650px;
+    width: 600px;
+    height: 600px;
     display: grid;
     box-sizing: border-box;
+    margin:0 4rem;
 }
+
 .containerChild{           /* each individual grid cell */
     box-sizing: border-box;
     border: 1px solid black;
     background-color: white;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
+}
+
+.left, .right{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.custom-color{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
 }

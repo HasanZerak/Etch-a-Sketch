@@ -11,24 +11,35 @@
 </head>
 
 <body>
-    <h1>Etch-a-Sketch</h1>
-    <button class="color" type="button">COLOR</button>
+    <h1 class="title">Etch-a-Sketch</h1>
 
-    <input type="color" id="customColor" name="customColor" value="black">
-    <label for="customColor">Choose a COLOR</label>
+    <div class="content">
+        <div class="left">
+            <div class="custom-color">
+                <label for="customColor">Custom Color?</label>
+                <input type="color" id="customColor" name="customColor" value="black">
 
-    <button class="eraser" type="button">ERASER</button>
-    <button class="randColor" type="button">RANDOM COLOR</button>
-    <input type="range" id="gridSize" name="girdSize" min="0" max="100" value="16"
-        oninput="this.nextElementSibling.value = this.value">
-    <!--Slider.-->
-    <output>16</output>
-    <button onclick="create()" class="create">CREATE</button>
-    <!--apply new grid size-->
-    <button onclick="btnReset()" class="btnReset">RESET</button> <!-- button to reset the entire grid -->
+            </div>
+            <button class="color" type="button">BLACK</button>
+            <button class="randColor" type="button">RANDOM COLOR</button>
+            <button class="eraser" type="button">ERASER</button>
+        </div>
 
-    <div id="container">
-        <!--Original container-->
+        <div id="container">
+            <!--Original container-->
+        </div>
+
+        <div class="right">
+            <div class="slider">
+                <input type="range" id="gridSize" name="girdSize" min="0" max="100" value="16"
+                    oninput="this.nextElementSibling.value = `${this.value} x ${this.value}`">
+                <!--Slider.-->
+                <output class="output">16 x 16</output>
+            </div>
+            <button onclick="create()" class="create">CREATE</button>
+            <!--apply new grid size-->
+            <button onclick="btnReset()" class="btnReset">RESET</button> <!-- button to reset the entire grid -->
+        </div>
     </div>
 
     <script src="js.js"></script>
