@@ -32,7 +32,7 @@ function changeColor() {
     if (mousedown === true) {           //checking if the condition to drag is true, only allowing to paint if the mouse id clicked and held.
         if (this.style.backgroundColor !== defaultColor) {
             this.style.backgroundColor = defaultColor;         //changes colour everytime mouse hovers over it.
-            let audio = new Audio('/home/hasan/repos/Etch-a-Sketch/sound/QKTA234-pop.mp3');         //variable to hold the audio.
+            let audio = new Audio('./sound/QKTA234-pop.mp3');         //variable to hold the audio.
             audio.play();           //playing the audio.
         }
     }
